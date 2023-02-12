@@ -139,6 +139,7 @@ audio[id^="audio_support_"]{
 }
 div[id^="wrapper_instructions"],div[id^="wrapper_replys"]{
     padding-left: 2%;
+    text-align: left;
 }
 input[id^=places0],input[id^=places1],input[id^=places2],input[id^=places3],input[id^=places4]{
     margin-left: 40%;

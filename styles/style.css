@@ -249,3 +249,8 @@ button[id^="modify_button"]{
 audio::-webkit-media-controls-volume-slider {
     display:none;
   }
+
+h3[id^="instructions_text"]{
+    text-align: left;
+    min-width:fit-content;
+}

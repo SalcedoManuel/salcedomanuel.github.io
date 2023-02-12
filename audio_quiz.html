@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/style_quiz.css">
     <link rel="stylesheet" href="./styles/style_nav.css">
-    <title>Document</title>
+    <script src="next_option"></script>
+    <title>Cuestionario de Audio</title>
 </head>
 <body>
     <nav class="nav container" style="height: 50px;">
@@ -32,7 +33,114 @@
             <a href="#" class="nav__link" ></a>
           </li>
         </ul>
-      </nav>
-      
+    </nav>
+<div class="wrapper" id="wrapper2" style="display: flex;">
+    <table>
+        <caption>
+            <div id="wrapper_title_question"><h2>Cuestionario: Online-Audio</h2></div>
+        </caption><tbody>
+        <tr>
+            <th><h3>Instrucciones para el Usuario</h3></th>
+        </tr>
+        <tr>
+            <td>
+                <div id="wrapper_instructions" style="width:fit-content;">
+                <h3 id="instructions_text"><strong>• Estar en un ambiente tranquilo cuando se realice el experimento.&nbsp;</strong><img src="./styles/images/silencio.png" style="max-width:20px;">&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+                <h3 style=" min-width:fit-content;"></h3>
+                <h3 id="instructions_text"><strong>• Usar auriculares que aíslen del entorno para escuchar los audios.&nbsp;</strong><img src="./styles/images/headphone1.png" style="max-width:20px;"></h3>
+                <h3 id="instructions_text"><strong>• No reproducir los audios de apoyo mientras se está reproduciendo otro audio.&nbsp;</strong><img src="./styles/images/no.png" style="max-width:20px;background-color:white;border-radius: 50%;"></h3>
+                <h3 id="instructions_text"><strong>• Marque en cada pregunta la opción que más se ajuste.&nbsp;</strong><img src="./styles/images/select1.png" style="max-width:20px;"></h3>
+                <h3 id="instructions_text"><strong>• En caso de duda, utilice los audios de apoyo.&nbsp;</strong><img src="./styles/images/duda1.png" style="max-width:20px;border-radius: 50%;"></h3>
+                <h3 id="instructions_text"><strong>• Puedes reproducir los archivos multimedia tantas veces como creas, no hay un tiempo límite para hacer el cuestionario.&nbsp;</strong><img src="./styles/images/update.png" style="max-width:20px;border-radius: 50%;"></h3>
+                <h3 id="instructions_text"><strong>• Por favor, es <strong>MUY RECOMENDABLE </strong> escuchar los siguientes audios para ajustar el volumen a su gusto de escucha. </strong></h3>
+                <h3 id="instructions_text"><strong>&nbsp;- Reproduzca todos ellos y relaciónelos con las características sonoras que indica su nombre.</strong></h3>
+                <h3 id="instructions_text"><strong>&nbsp;- Para reproducir los audios pulse los botones de abajo y posteriormente darle al botón play.</strong><img src="./styles/images/play.png" style="max-width:20px;"></h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="text-align: center;margin: 0 auto;width: 180px;">
+                                    <div id="div_support" onclick="functions_quiz.show_audio(0)">
+                                        <h4>Audio Agradable <img id="img_pleasant" style="width: 12px;" src="./styles/images/down-arrow.png"></h4>
+                                    </div>
+                                    <div id="support_pleasant" style="text-align: center;margin: 0 auto;width: 180px;">
+                                        <audio id="audio_support_pleasant" controls="" style="width: 180px;"><source src="./resources/examples/Pleasant/Agradable.wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="text-align: center;margin: 0 auto;width: 180px;">
+                                    <div id="div_support" onclick="functions_quiz.show_audio(1)">
+                                        <h4>Audio Estático <img id="img_uneventful" style="width: 12px;" src="./styles/images/down-arrow.png"></h4>
+                                    </div>
+                                    <div id="support_uneventful" style="text-align: center;margin: 0 auto;width: 180px;">
+                                        <audio id="audio_support_uneventful" controls=""  style="width: 180px;"><source src="./resources/examples/Uneventful/No_definido.wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="text-align: center;margin: 0 auto;width: 180px;">
+                                    <div id="div_support" onclick="functions_quiz.show_audio(2)">
+                                        <h4> Audio Desagradable <img id="img_annoying" style="width: 12px;" src="./styles/images/down-arrow.png"></h4>
+                                    </div>
+                                    <div id="support_annoying" style="text-align: center;margin: 0 auto;width: 180px;">
+                                        <audio id="audio_support_annoying" controls="" style="width: 180px;"><source src="./resources/examples/Annoying/Molesto.wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="text-align: center;margin: 0 auto;width: 180px;">
+                                    <div id="div_support" onclick="functions_quiz.show_audio(3)">
+                                        <h4> Audio Dinámico <img id="img_eventful" style="width: 12px;" src="./styles/images/down-arrow.png"></h4>
+                                    </div><div id="support_eventful" style="text-align: center;margin: 0 auto;width: 180px;">
+                                        <audio id="audio_support_eventful" controls="" loop="" style="width: 180px;"><source src="./resources/examples/Eventful/Eventful.wav"></audio>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                </div>
+                <div id="wrapper_replys" style="margin-left: 5px;">
+                    <h2 style="text-align:center;">Preguntas Generales Iniciales al Participante</h2>
+                    <br>
+                    <h4>Para realizar este estudio es conveniente disfrutar de salud auditiva. Le sugerimos que realice un sencillo test para comprobarlo.</h4>
+                    <h4>El test en ningún caso es eliminatorio y siempre podrá participar en la encuesta de paisajes sonoros.</h4>
+                    <h4>Para realizarlo correctamente esté concentrado en un lugar sin distracciones y preferiblemente con auriculares. </h4>
+                    <h4>Puede hacerlo tantas veces como quiera. En ese caso tome la puntuación más alta.</h4>
+                    <br>
+                    <br>
+                    <h4>1. <strong>Introduce aquí tu puntuación auditiva obtenida en el test hearWHO</strong>:&nbsp;&nbsp;<input type="number" id="score" min="0" max="100" value="75" style="width:35px;text-align:center;"></h4>
+                    <br>
+                    <table style="width:700px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Si no tiene la App puede descargarsela y realizar el test leyendo el siguiente QR.</h4>
+                                    <h4>• En caso de no realizar el cuestionario, escriba CERO en la puntuación:</h4>
+                                    <h4>• En caso de sí realizar el cuestionario, escriba o marque la puntuación que aparece al finalizar el test.</h4>
+                                    <h4>&nbsp;&nbsp;• El test de hearWHO se tarda en realizar solo unos pocos minutos.</h4>
+                                </td>
+                                <td>
+                                    <img src="./styles/images/QR.PNG" alt="QRCODE" style="margin-left: 30% ">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br><br><br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div id="wrapper_next">
+                    <button id="button_next" onclick="functions_quiz.next_option(0)">Siguiente</button>
+                </div>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
