@@ -29,6 +29,9 @@ div[id^="wrapper0"],div[id^="wrapper1"],div[id^="wrapper2"]{
     display: flex;
     justify-content: center;
 }
+div[id^="wrapper1"]{
+    margin-top: 5vh;
+}
 div[id^="wrapper2"]{
     margin-left: auto;
 }
