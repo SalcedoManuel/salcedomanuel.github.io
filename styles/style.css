@@ -41,6 +41,7 @@ h3{
     height: fit-content;
     color: rgb(250,250,250);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 5px;
     font-size: large;
 }
 button[id^="btn_"]:hover{
@@ -73,7 +74,6 @@ button[id^="btn_"]:hover{
 }
 #wrapper0,#wrapper1,#wrapper2,#wrapper3,#wrapper4{
     text-align: center;
-    margin-left: 20%;
 }
 /*button{
     background-color: white;

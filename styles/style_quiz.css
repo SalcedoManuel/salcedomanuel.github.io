@@ -26,11 +26,14 @@ audio{
     margin:auto;
 }
 div[id^="wrapper0"],div[id^="wrapper1"],div[id^="wrapper2"]{
-    display: block;
+    display: flex;
+    flex-direction:row;
     justify-content: center;
 }
 div[id^="wrapper1"]{
-    margin-top: 5vh;
+    flex: 1;
+    padding-top: 5vh;
+    margin: 0 auto;
 }
 div[id^="wrapper2"]{
     margin-left: auto;
