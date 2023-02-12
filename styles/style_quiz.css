@@ -26,7 +26,7 @@ audio{
     margin:auto;
 }
 div[id^="wrapper0"],div[id^="wrapper1"],div[id^="wrapper2"]{
-    display: flex;
+    display: block;
     justify-content: center;
 }
 div[id^="wrapper1"]{

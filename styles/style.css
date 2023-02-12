@@ -37,7 +37,7 @@ h3{
     border: rgb(255, 255, 255) 2px solid;
     background: transparent;
     border-style: outset;
-    width: 120px;
+    width: fit-content;
     height: fit-content;
     color: rgb(250,250,250);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
