@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Hoja de estilo de la interfaz -->
+    <link rel="stylesheet" href="./styles/style_quiz.css">
+    <link rel="stylesheet" href="./styles/style_nav.css">
+
+    <!-- Cargar el proceso asociado a esta página -->
+    <script src="./script/index.js" defer></script>
+
+    <title>Soundscape Questionnaire</title>
 </head>
+
 <body>
-    Pagina principal
+  <nav class="nav container" style="height: 50px;">
+    <span class="nav__logo">
+        <img style="height: 30px;" src="images/logo_urjc.png" alt="">
+    </span>
+    <ul class="nav__list">
+
+      <li class="nav__item">
+        <a href="index.html" class="nav__link"><b>Inicio</b></a>
+      </li>    
+      <li class="nav__item">
+        <a href="#" class="nav__link" onclick="nav_extras.contact_click()">Contacto</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link" onclick="nav_extras.settings()">Ajustes</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link" onclick="nav_extras.help_click(0)">Ayuda</a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link" ></a>
+      </li>
+    </ul>
+  </nav>
+  <br><br>
+  <div class="wrapper" id="wrapper0">
+    <!--Si se quiere rellenar un cuestionario que está en la red se puede continuar con este botón-->
+    <button id="btn_center" onclick="seek_online_quiz()"><h3>Buscar Cuestionario Online</h3></button>
+    <!--Si se quiere continuar rellenado un cuestionario antes se puede continuar con este botón-->
+    <button id="btn_center" onclick="start_quiz()"><h3>Iniciar Recogida de Datos</h3></button>
+    <!--Se buscan en el ordenador los cuestionarios ya creados.-->
+    <button id="btn_center" onclick="seek_quizs()"><h3>Buscar Cuestionarios Creados</h3></button>
+  </div>
+  <br>
+  <!--Este contenedor sirve para Informar si hay cuestionarios iniciados o
+     dar información sobre el cuestionario. -->
+  <div class="wrapper" id="wrapper1">
+    <span id="wrapper_summary">
+      <label id="label_summary"><h3>Introduzca el enlace al Cuestionario: <input type="url" id="verify_quiz_online"><button onclick="verify_quiz_online()" style="height: 22px">Verificar enlace</button></h3></label>
+      <table id="table_summary">
+          <thead>
+            <tr style="border-right: 1px #ffffff solid;">
+              <th style="width:200px;border: 1px #ffffff solid;"><h3>Status</h3></th>
+              <th colspan="2" style="width:200px;border: 1px #ffffff solid;"><h3 id="online_status">Correcto</h3></th>
+            </tr>
+            <tr>
+              <th style="width:200px;border: 1px #ffffff solid;"><h3>Nombre del Cuestionario</h3></th>
+              <th colspan="2" style="width:200px;border: 1px #ffffff solid;"><h3 id="online_quiz_name">Quiz1</h3></th>
+            </tr>
+            <tr>
+              <th style="width:200px;border: 1px #ffffff solid;"><h3>Resumen</h3></th>
+              <th style="width:200px;border: 1px #ffffff solid;"><h3 id="online_number_places">2 Lugares</h3></th>
+              <th style="width:200px;border: 1px #ffffff solid;"><h3 id="online_number_recording">3 Grabaciones</h3></th>
+            </tr>
+            <tr>
+              <th colspan="3" ><button onclick="get_quiz_online()" id="online_button_start" style="width:200px;border: 1px #ffffff solid;background-color: #000000;color: #ffffff;"><h2>Pulsar para Iniciar</h2></button></th>
+            </tr>
+          </thead>
+        </table>
+    </span>
+    <span id="wrapper_text"></span>
+  </div>
+  <!-- En este contenedor se mostrarán los audios y vídeos con sus respuestas.-->
+  <div class="wrapper" id="wrapper2">
+    <div id="wrapper_title_question"></div>
+    <div id="wrapper_files"></div>
+    <div id="wrapper_replys"></div>
+    <div id="wrapper_next"></div>
+  </div >
 </body>
 </html>
