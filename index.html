@@ -69,6 +69,7 @@ document.getElementById('form')
     const templateID = 'template_725jgok';
 
     emailjs.sendForm(serviceID, templateID, this)
+    console.log(document.getElementById("message"))
       .then(() => {
         btn.value = 'Send Email';
         alert('Sent!');
