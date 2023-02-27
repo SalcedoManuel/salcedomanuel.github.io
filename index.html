@@ -33,7 +33,7 @@
     }</style>
 </head>
 <body>
-  <h1>Quiz</h1>
+  <h1>Quiz2</h1>
     <form id="form">
         <div class="field">
           <label for="type">type</label>
@@ -59,29 +59,32 @@
       </script>
       <script>
         const btn = document.getElementById('button');
+        function endQuiz() {
+          var completed_quiz = new Object;
+          completed_quiz[0] = user_object;
+          completed_quiz = JSON.stringify(main_info);
+          document.getElementById("message").value = completed_quiz;
+        }
+        document.getElementById('form')
+          .addEventListener('submit', function(event) {
+            
+            event.preventDefault();
 
-document.getElementById('form')
-  .addEventListener('submit', function(event) {
-    console.log(document.getElementById("message").value)
-    let newMessage = ["Hola"];
-    document.getElementById("message").value = newMessage;
-    event.preventDefault();
+            btn.value = 'Sending...';
 
-    btn.value = 'Sending...';
+            const serviceID = 'default_service';
+            const templateID = 'template_725jgok';
 
-    const serviceID = 'default_service';
-    const templateID = 'template_725jgok';
+            emailjs.sendForm(serviceID, templateID, this)
 
-    emailjs.sendForm(serviceID, templateID, this)
-
-      .then(() => {
-        btn.value = 'Send Email';
-        alert('Sent!');
-      }, (err) => {
-        btn.value = 'Send Email';
-        alert(JSON.stringify(err));
-      });
-  });
+              .then(() => {
+                btn.value = 'Send Email';
+                alert('Sent!');
+              }, (err) => {
+                btn.value = 'Send Email';
+                alert(JSON.stringify(err));
+              });
+          });
       </script>
 </body>
 </html>
