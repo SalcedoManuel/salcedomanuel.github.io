@@ -33,7 +33,7 @@
     }</style>
 </head>
 <body>
-  <h1>Quiz5</h1>
+  <h1>Quiz6</h1>
     <form id="form">
         <div class="field">
           <label for="type">type</label>
@@ -50,7 +50,7 @@
       
         <input type="submit" id="button" value="Send Email" >
       </form>
-      
+      <button onclick="endQuiz()">Boton de cambio</button>
       <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       
@@ -61,6 +61,11 @@
         const btn = document.getElementById('button');
         function endQuiz() {
           var completed_quiz = new Object;
+          let user_object = new Object;
+          date = Date().split("00 (")[0];
+          user_object["Date"] = date;
+          let hearing_score = 0;
+          user_object["Pregunta"] = hearing_score;
           completed_quiz[0] = user_object;
           let newMessage = JSON.stringify(completed_quiz);
           document.getElementById("message").value = newMessage;
