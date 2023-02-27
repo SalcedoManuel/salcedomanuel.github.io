@@ -33,6 +33,7 @@
     }</style>
 </head>
 <body>
+  <h1>Quiz</h1>
     <form id="form">
         <div class="field">
           <label for="type">type</label>
@@ -61,6 +62,8 @@
 
 document.getElementById('form')
   .addEventListener('submit', function(event) {
+    console.log(document.getElementById("message"))
+    document.getElementById("message") = "Hola"
     event.preventDefault();
 
     btn.value = 'Sending...';
@@ -69,7 +72,7 @@ document.getElementById('form')
     const templateID = 'template_725jgok';
 
     emailjs.sendForm(serviceID, templateID, this)
-    console.log(document.getElementById("message"))
+
       .then(() => {
         btn.value = 'Send Email';
         alert('Sent!');
