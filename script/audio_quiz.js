@@ -45,14 +45,15 @@ function last_question() {
 }
 
 function end_quiz() {
-
+  var completed_quiz = new Object;
+  completed_quiz[0] = user_object;
+  completed_quiz = JSON.stringify(main_info);
+  document.getElementById("message").value = completed_quiz;
 }
 document.getElementById('form')
  .addEventListener('submit', function(event) {
-    var completed_quiz = new Object;
-    completed_quiz[0] = user_object;
-    completed_quiz = JSON.stringify(main_info);
-    document.getElementById("message").value = completed_quiz;
+  end_quiz();
+  console.log("Modificado el mensaje.")
    event.preventDefault();
 
    btn.value = 'Sending...';
