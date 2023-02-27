@@ -22,38 +22,66 @@ function go_to_questions() {
     document.getElementById("wrapper2").style.display = "none";
     document.getElementById("question1").style.display = "flex";
 }
+function hideOptions() {
+  document.getElementById("question1").style.display = "none";
+  document.getElementById("question2").style.display = "none";
+  document.getElementById("question3").style.display = "none";
+  document.getElementById("question4").style.display = "none";
+  document.getElementById("question5").style.display = "none";
+  document.getElementById("question6").style.display = "none";
+}
+function addInfo(question_wrapper_number) {
+  var places_replies = new Object;
+  if (question_wrapper_number > 3) {
+    name_actual_scenary = "Ciutadella";
+    number_places_questions_replied = 0;
+  }else{
+    name_actual_scenary = "Maó";
+    number_places_questions_replied = 1;
+  }
+  places_replies["Name_Scenary"] = name_actual_scenary;
+  places_replies["Places_Number"] = number_places_questions_replied;
+  places_replies["Recording_Number"] = question_wrapper_number;
+  places_replies["Agradable/Placentero"] = document.getElementById("places0"+question_wrapper_number).value;
+  places_replies["Sin Actividad/Estático"] = document.getElementById("places1"+question_wrapper_number).value;
+  places_replies["Desagradable/Molesto"] = document.getElementById("places2"+question_wrapper_number).value;
+  places_replies["Con Actividad/Dinámico"] = document.getElementById("places3"+question_wrapper_number).value;
+  places_replies["En general, ¿Cómo describirías la calidad acústica del entorno que escuchas?"] = document.getElementById("places4"+question_wrapper_number).value;
+  places_replies["¿Cuánto tiempo permanecerías en un lugar con un ambiente sonoro como este?"] = document.getElementById("places5"+question_wrapper_number).value;
+  places_replies["¿Para cuál de los siguientes contextos urbanos crees que es adecuado el entorno acústico que escuchas?"] = document.getElementById("places6"+question_wrapper_number).value;
+  places_replies["¿A qué período del año crees que se corresponde el entorno sonoro que escuchas?"] = document.getElementById("places7"+question_wrapper_number).value;
+  all_places_replies.push(places_replies);
+}
+function addLastQuestions() {
+  var user_replies = new Object;
+  user_replies["¿Conoces Menorca?¿En qué grado estás familiarizado/a o relacionado/a con la isla?"] = document.getElementById("last_0").value;
+  user_replies["¿Tienes algún tipo de conocimiento o formación en Acústica?"] = document.getElementById("last_1").value;
+  last_user_replies.push(user_replies);
+}
 function next_option(question_wrapper_number) {
-
-    document.getElementById("question1").style.display = "none";
-    document.getElementById("question2").style.display = "none";
-    document.getElementById("question3").style.display = "none";
-    document.getElementById("question4").style.display = "none";
-    document.getElementById("question5").style.display = "none";
-    document.getElementById("question6").style.display = "none";
+    hideOptions();
     document.getElementById("question"+question_wrapper_number).style.display = "flex";
     document.getElementById("question_final").style.display = "none";
+    addInfo(question_wrapper_number);
 }
 
 function last_question() {
-    document.getElementById("question1").style.display = "none";
-    document.getElementById("question2").style.display = "none";
-    document.getElementById("question3").style.display = "none";
-    document.getElementById("question4").style.display = "none";
-    document.getElementById("question5").style.display = "none";
-    document.getElementById("question6").style.display = "none";
+    hideOptions();    
     document.getElementById("question_final").style.display = "flex";
 }
 
 function end_quiz() {
   var completed_quiz = new Object;
+  addLastQuestions();
   completed_quiz[0] = user_object;
+  completed_quiz[1] = all_places_replies;
+  completed_quiz[2] = last_user_replies;
   let newMessage = JSON.stringify(completed_quiz);
   document.getElementById("message").value = newMessage;
 }
 document.getElementById('form')
  .addEventListener('submit', function(event) {
   end_quiz();
-  console.log("Modificado el mensaje.")
    event.preventDefault();
 
    btn.value = 'Sending...';
