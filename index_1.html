@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .field {
+      margin-bottom: 10px;
+    }
+    
+    .field label {
+      display: block;
+      font-size: 12px;
+      color: #777;
+    }
+    
+    .field input {
+      display: block;
+      min-width: 250px;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    input[type="submit"] {
+      display: block;
+      padding: 6px 30px;
+      font-size: 14px;
+      background-color: #4460AA;
+      color: #fff;
+      border: none
+    }</style>
+</head>
+<body>
+  <h1>Quiz2</h1>
+    <form id="form">
+        <div class="field">
+          <label for="type">type</label>
+          <input type="text" name="type" id="type">
+        </div>
+        <div class="field">
+          <label for="message">message</label>
+          <input type="text" name="message" id="message">
+        </div>
+        <div class="field">
+          <label for="reply_to">reply_to</label>
+          <input type="text" name="reply_to" id="reply_to" placeholder="paisajessonorosTFG@gmail.com">
+        </div>
+      
+        <input type="submit" id="button" value="Send Email" >
+      </form>
+      
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      
+      <script type="text/javascript">
+        emailjs.init('JSjVUlg_stgzDtPGm')
+      </script>
+      <script>
+        const btn = document.getElementById('button');
+
+document.getElementById('form')
+  .addEventListener('submit', function(event) {
+    console.log(document.getElementById("message").value)
+    document.getElementById("message").value = "Cambiado";
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_725jgok';
+
+    emailjs.sendForm(serviceID, templateID, this)
+
+      .then(() => {
+        btn.value = 'Send Email';
+        alert('Sent!');
+      }, (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+      });
+  });
+      </script>
+</body>
+</html>

@@ -52,7 +52,7 @@ document.getElementById('form')
     var completed_quiz = new Object;
     completed_quiz[0] = user_object;
     completed_quiz = JSON.stringify(main_info);
-    document.getElementById("message") = completed_quiz;
+    document.getElementById("message").value = completed_quiz;
    event.preventDefault();
 
    btn.value = 'Sending...';
