@@ -78,6 +78,8 @@ function end_quiz() {
   completed_quiz[2] = last_user_replies;
   let newMessage = JSON.stringify(completed_quiz);
   document.getElementById("message").value = newMessage;
+  document.getElementById("type").value = "Audio";
+  document.getElementById("reply_to").value = "paisajessonorosTFG@gmail.com";
 }
 document.getElementById('form')
  .addEventListener('submit', function(event) {
