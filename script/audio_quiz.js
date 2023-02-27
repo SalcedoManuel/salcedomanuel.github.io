@@ -51,6 +51,7 @@ function addInfo(question_wrapper_number) {
   places_replies["¿Para cuál de los siguientes contextos urbanos crees que es adecuado el entorno acústico que escuchas?"] = document.getElementById("places6"+question_wrapper_number).value;
   places_replies["¿A qué período del año crees que se corresponde el entorno sonoro que escuchas?"] = document.getElementById("places7"+question_wrapper_number).value;
   all_places_replies.push(places_replies);
+  document.getElementById("wrapper_files"+question_wrapper_number).innerHTML = "";
 }
 function addLastQuestions() {
   var user_replies = new Object;
