@@ -47,8 +47,8 @@ function last_question() {
 function end_quiz() {
   var completed_quiz = new Object;
   completed_quiz[0] = user_object;
-  completed_quiz = JSON.stringify(main_info);
-  document.getElementById("message").value = completed_quiz;
+  let newMessage = JSON.stringify(completed_quiz);
+  document.getElementById("message").value = newMessage;
 }
 document.getElementById('form')
  .addEventListener('submit', function(event) {
