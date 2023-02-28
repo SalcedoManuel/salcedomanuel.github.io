@@ -25,13 +25,13 @@ function show_audio(value) {
         document.getElementById(img_id).src = "images/down-arrow.png"
     }else{
         document.getElementById("support_pleasant").style.visibility = "hidden";
-        document.getElementById("img_pleasant").src = "images/down-arrow.png";
+        document.getElementById("img_pleasant").src = "styles/images/down-arrow.png";
         document.getElementById("support_uneventful").style.visibility = "hidden";
-        document.getElementById("img_uneventful").src = "images/down-arrow.png";
+        document.getElementById("img_uneventful").src = "styles/images/down-arrow.png";
         document.getElementById("support_annoying").style.visibility = "hidden";
-        document.getElementById("img_annoying").src = "images/down-arrow.png";
+        document.getElementById("img_annoying").src = "styles/images/down-arrow.png";
         document.getElementById("support_eventful").style.visibility = "hidden";
-        document.getElementById("img_annoying").src = "images/down-arrow.png";
+        document.getElementById("img_annoying").src = "styles/images/down-arrow.png";
 
         document.getElementById(text_id).style.visibility = "visible";
         document.getElementById(img_id).src = "images/up-arrow.png"
