@@ -54,6 +54,7 @@ function addInfo(question_wrapper_number) {
   document.getElementById("wrapper_files"+(question_wrapper_number-1)).innerHTML = "";
 }
 function addLastQuestions() {
+   document.getElementById("wrapper_files"+(question_wrapper_number)).innerHTML = "";
   var user_replies = new Object;
   user_replies["¿Conoces Menorca?¿En qué grado estás familiarizado/a o relacionado/a con la isla?"] = document.getElementById("last_0").value;
   user_replies["¿Tienes algún tipo de conocimiento o formación en Acústica?"] = document.getElementById("last_1").value;
