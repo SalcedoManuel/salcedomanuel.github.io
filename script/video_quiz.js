@@ -97,7 +97,7 @@ document.getElementById('form')
     .then(() => {
       btn.value = 'Enviar Cuestionario';
       btn.style.display = "none";
-      alert('Sent!');
+      alert('Enviado, ya puede salir de la página!');
     }, (err) => {
       btn.value = 'Vuelve a enviar el cuestionario';
       alert(JSON.stringify(err));
