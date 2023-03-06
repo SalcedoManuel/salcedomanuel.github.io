@@ -87,15 +87,15 @@ document.getElementById('form')
   end_quiz();
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.value = 'Enviando...';
 
    const serviceID = 'default_service';
    const templateID = 'template_725jgok';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
+      btn.value = 'Enviar Cuestionario';
+      alert('Enviado! Ya puede salir de la página');
     }, (err) => {
       btn.value = 'Send Email';
       alert(JSON.stringify(err));

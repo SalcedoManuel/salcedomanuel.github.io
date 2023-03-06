@@ -96,7 +96,6 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Enviar Cuestionario';
-      btn.style.display = "none";
       alert('Enviado, ya puede salir de la página!');
     }, (err) => {
       btn.value = 'Vuelve a enviar el cuestionario';
