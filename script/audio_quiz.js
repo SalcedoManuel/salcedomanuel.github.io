@@ -54,7 +54,6 @@ function addInfo(question_wrapper_number) {
   document.getElementById("wrapper_files"+(question_wrapper_number-1)).innerHTML = "";
 }
 function addLastQuestions() {
-  document.getElementById("wrapper_files"+(question_wrapper_number)).innerHTML = "";
   var user_replies = new Object;
   user_replies["¿Conoces Menorca?¿En qué grado estás familiarizado/a o relacionado/a con la isla?"] = document.getElementById("last_0").value;
   user_replies["¿Tienes algún tipo de conocimiento o formación en Acústica?"] = document.getElementById("last_1").value;
@@ -80,7 +79,7 @@ function end_quiz() {
   completed_quiz[2] = last_user_replies;
   let newMessage = JSON.stringify(completed_quiz);
   document.getElementById("message").value = newMessage;
-  document.getElementById("type").value = quiz_name_actual;
+  document.getElementById("type").value = "Audio";
   document.getElementById("reply_to").value = "paisajessonorosTFG@gmail.com";
 }
 document.getElementById('form')
