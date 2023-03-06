@@ -80,7 +80,11 @@ function end_quiz() {
   completed_quiz[2] = last_user_replies;
   let newMessage = JSON.stringify(completed_quiz);
   document.getElementById("message").value = newMessage;
+  document.getElementById("type").value = quiz_name_actual;
   document.getElementById("type").value = "Video";
+  document.getElementById("type").value = quiz_name_actual;
+  document.getElementById("type").value = "Video";
+  document.getElementById("type").value = quiz_name_actual;
   document.getElementById("reply_to").value = "paisajessonorosTFG@gmail.com";
 }
 document.getElementById('form')
@@ -88,7 +92,11 @@ document.getElementById('form')
   end_quiz();
    event.preventDefault();
 
+   btn.value = 'Enviando...';
    btn.value = 'Enviando Cuestionario...';
+   btn.value = 'Enviando...';
+   btn.value = 'Enviando Cuestionario...';
+   btn.value = 'Enviando...';
 
    const serviceID = 'default_service';
    const templateID = 'template_725jgok';
@@ -96,9 +104,17 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Enviar Cuestionario';
+      alert('Enviado! Ya puede salir de la página');
       alert('Enviado, ya puede salir de la página!');
+      alert('Enviado! Ya puede salir de la página');
+      alert('Enviado, ya puede salir de la página!');
+      alert('Enviado! Ya puede salir de la página');
     }, (err) => {
+      btn.value = 'Send Email';
       btn.value = 'Vuelve a enviar el cuestionario';
+      btn.value = 'Send Email';
+      btn.value = 'Vuelve a enviar el cuestionario';
+      btn.value = 'Send Email';
       alert(JSON.stringify(err));
     });
 });
