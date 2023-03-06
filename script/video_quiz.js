@@ -2,7 +2,7 @@ const btn = document.getElementById('button');
 
 const number_places = 2;
 const number_recordings = 3;
-const id_quiz = 1672668036;
+const id_quiz = 1672007570;
 const quiz_name_actual = "Online-Video";
 
 var user_object = new Object;
@@ -95,9 +95,10 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Enviar Cuestionario';
+      btn.style.display = "none";
       alert('Sent!');
     }, (err) => {
-      btn.value = 'Send Email';
+      btn.value = 'Vuelve a enviar el cuestionario';
       alert(JSON.stringify(err));
     });
 });
