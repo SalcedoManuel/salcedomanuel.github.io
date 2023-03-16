@@ -50,7 +50,9 @@ function addInfo(number) {
   places_replies["¿Cuánto tiempo permanecerías en un lugar con un ambiente sonoro como este?"] = document.getElementById("places5"+number).value;
   places_replies["¿Para cuál de los siguientes contextos urbanos crees que es adecuado el entorno acústico que escuchas?"] = document.getElementById("places6"+number).value;
   places_replies["¿A qué período del año crees que se corresponde el entorno sonoro que escuchas?"] = document.getElementById("places7"+number).value;
+
   all_places_replies.push(places_replies);
+  console.table(all_places_replies)
   document.getElementById("wrapper_files"+(question_wrapper_number-1)).innerHTML = "";
 }
 function addLastQuestions() {
@@ -63,8 +65,8 @@ function next_option(question_wrapper_number) {
     hideOptions();
     document.getElementById("question"+question_wrapper_number).style.display = "flex";
     document.getElementById("question_final").style.display = "none";
-    console.info(question_wrapper_number)
-    addInfo(question_wrapper_number-1);
+    console.info(question_wrapper_number-1)
+    addInfo((question_wrapper_number-1));
 }
 
 function last_question() {
