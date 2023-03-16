@@ -64,7 +64,7 @@ function next_option(question_wrapper_number) {
     document.getElementById("question"+question_wrapper_number).style.display = "flex";
     document.getElementById("question_final").style.display = "none";
     console.info(question_wrapper_number)
-    addInfo(question_wrapper_number);
+    addInfo(question_wrapper_number-1);
 }
 
 function last_question() {
